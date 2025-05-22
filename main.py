@@ -22,5 +22,14 @@ def terceiro():
 def quarto():
     return render_template('quarto.html') 
 
+@app.route('/recebedados', methods=['POST'])
+def recebedados():
+    nome = request.form['nome']
+    email = request.form['email']
+        #nome = request.args['nome']
+        #email = request.args["email"]
+		#nome = request.args.get("nome")
+    return "{} e {}".format(nome,email)
+
 if __name__ == '__main__':
     app.run(debug=True)
